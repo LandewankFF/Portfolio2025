@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+*{
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+@theme {
+  --color-light: #fce6e9;
+  --color-light-hover: #fad9de;
+  --color-light-active: #f4b0bc;
+  --color-primary: #dd0026;
+  --color-primary-hover: #c70022;
+  --color-primary-active: #b1001e;
+  --color-dark: #a6001d;
+  --color-dark-hover: #850017;
+  --color-dark-active: #630011;
+  --color-darker: #4d000d;
+
+  --breakpoint-s:23.4375em;
+}
+
