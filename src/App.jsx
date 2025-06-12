@@ -1,11 +1,13 @@
 import './App.css'
 import Navbar from './components/Navbar'
+import Introduction from './components/Introduction'
 
 function App() {
 
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
+      <Introduction/>
     </>
   )
 }
