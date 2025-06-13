@@ -4,7 +4,7 @@ const Introduction = () => {
     <>
       <section>
         {/* container */}
-        <div className="flex">
+        <div className="px-[20px] md:px-[50px] lg:px-[122px] flex justify-between items-center">
           {/* Content Left */}
           <div className="w-1/2 items-center justify-center">
             <div className="">
@@ -33,7 +33,7 @@ const Introduction = () => {
           </div>
 
           {/* Content Right */}
-          <div className="w-1/2 flex items-center justify-center">
+          <div className="w-1/2 flex items-center justify-end">
             <div className="">
               <img src={photo} alt="photo landing" />
             </div>

@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="shadow-md py-4 fixed top-0 left-0 w-full bg-white z-50">
+      <nav className="shadow-md py-4 static top-0 left-0 w-full bg-white z-50">
         <div className="px-[20px] md:px-[50px] lg:px-[122px] flex justify-between items-center">
           {/* Logo */}
           <div>
