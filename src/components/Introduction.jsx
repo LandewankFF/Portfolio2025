@@ -21,7 +21,7 @@ const Introduction = () => {
                 <p className="text-[18px] text-justify">
                   I am graduate of Telkom University majoring in Informatics
                   Engineering, with expertise in the fields of DevOps
-                  Engineer,lffdevops/blog-kubernetes Computer Networking, IT
+                  Engineer, Computer Networking, IT
                   Infrastructure and System Analysist. I want to have a career
                   in IT, and I am committed to continuing to grow and deliver
                   innovative solutions.

@@ -3,9 +3,9 @@ import { useState } from "react";
 const Navbar = () => {
   const navLink = [
     { name: "About", path: "#about" },
-    { name: "Service", path: "#service" },
+    { name: "Blog", path: "#blog" },
     { name: "Project", path: "#project" },
-    { name: "Contact", path: "#contact" },
+    { name: "certificate", path: "#certificate" },
   ];
 
   const [toggleMenu, setToggleMenu] = useState(false);
