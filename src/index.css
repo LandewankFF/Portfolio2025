@@ -37,38 +37,6 @@
   height: 100%;
   background-color: #fce6e9; 
   transform: translateX(-100%); 
-  transition: transform 0.5s ease-in-out; 
+  transition: transform 0.7s ease-in-out; 
   z-index: -1; 
-}
-
-.card-hover-effect:hover::before {
-  transform: translateX(0); 
-}
-
-
-.card-hover-effect:hover .group-hover-text-darker { 
-  color: var(--color-darker);
-}
-
-.card-hover-effect:hover .group-hover-text-primary {
-  color: var(--color-primary);
-}
-
-
-.card-hover-effect:hover .group-hover-text-white {
-  color: black;
-}
-
-.card-hover-effect:hover .group-hover-text-black {
-  color: white;
-}
-
-.card-hover-effect:hover .group-hover-icon-darker ion-icon {
-  color: var(--color-darker);
-}
-.card-hover-effect:hover .group-hover-icon-primary ion-icon {
-  color: var(--color-primary);
-}
-.card-hover-effect:hover .group-hover-icon-black ion-icon {
-  color: black;
 }

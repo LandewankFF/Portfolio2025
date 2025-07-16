@@ -1,24 +1,36 @@
 import Title from "./Button/Title";
 import { CardService } from "./Card";
+import digitalMarketing from "../assets/sosmed.png"
+import creator from "../assets/creator.png"
+import website from "../assets/web.png"
 
 const serviceData = [
   {
     id: 1,
     title: "Web Development",
-    description:
-      "Providing landing page creation, company profile websites, online stores, management systems, and web-based applications as needed."
+    description: "Melayani pembuatan landing page, company profile, sistem manajemen, dan aplikasi berbasis web sesuai kebutuhan.",
+    iconType: 'img',
+    iconSrc: website, 
+    iconAlt: "Website"
   },
   {
     id: 2,
     title: "Digital Marketing",
     description:
-      "Ad management, SEO optimization, email marketing, and social media management."
+      "Ad management, SEO optimization, email marketing, and social media management.",
+    iconType: 'img',
+    iconSrc: digitalMarketing, 
+    iconAlt: "Digital Marketing"
   },
+
   {
     id: 3,
     title: "Content Creator",
     description:
-      "Photography, Videography and copywriting content creation for social media"
+      "Photography, Videography and copywriting content creation for social media",
+    iconType: 'img',
+    iconSrc: creator, 
+    iconAlt: "Content Creator"
   }
   
 ];
@@ -40,6 +52,9 @@ const Services = () => {
               key={service.id}
               Title={service.title}
               Description={service.description}
+              iconType={service.iconType}
+              iconSrc={service.iconSrc}
+              iconAlt={service.iconAlt}
             />
           ))}
         </div>
