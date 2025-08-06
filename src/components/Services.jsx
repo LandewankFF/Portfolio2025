@@ -1,8 +1,9 @@
 import Title from "./Button/Title";
-import { CardService } from "./Card";
+// import { CardService } from "./Card";
 import digitalMarketing from "../assets/sosmed.png"
 import creator from "../assets/creator.png"
 import website from "../assets/web.png"
+import CardService from "./Card"; 
 
 const serviceData = [
   {
