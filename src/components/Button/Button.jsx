@@ -20,21 +20,21 @@ const Line = ({text,hover,textColor,textColorHover}) => {
             <button className={`
                 flex items-center justify-center text-[18px] gap-2 cursor-pointer
                 transition-colors ease-in-out duration-300
-                ${hover} /* Biarkan prop hover di sini jika ada hover state lain untuk button itu sendiri */
-                ${textColor} /* Terapkan warna teks default di button */
-                group /* Tambahkan class 'group' di sini */
+                ${hover} 
+                ${textColor} 
+                group
             `}>
                 <p className={`
                     underline underline-offset-8 decoration-3
                     transition-colors ease-in-out duration-300
-                    ${textColorHover}/* Tambahkan group-hover untuk warna teks */
+                    ${textColorHover}
                 `}>
                     {text}
                 </p>
                 <div className={`
                     font-extrabold rotate-230 text-3xl
                     transition-colors ease-in-out duration-300
-                    ${textColorHover}/* Tambahkan group-hover untuk warna ikon */
+                    ${textColorHover}
                 `}>
                     <ion-icon name="arrow-down-outline"></ion-icon>
                 </div>
