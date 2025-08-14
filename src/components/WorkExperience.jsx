@@ -1,4 +1,4 @@
-import VerticalTimeline from "./Button/VerticalTimeline";
+import VerticalTimeline from "./VerticalTimeline";
 import Title from "./Button/Title";
 import JobDesc from "./Button/JobDesc";
 
@@ -24,14 +24,14 @@ const ExperienceDataright = [
 
 const WorkExperience = () => {
   return (
-    <div className="">
+    <section className="container mx-auto">
       <div>
         <Title
           title="WORK EXPERIENCE"
-          description="Showcasing my journey in IT through real-world projects. From web development to DevOps, each project reflects my passion for innovation and problem-solving."
+          description="I am a DevOps Engineer with experience in managing CI/CD pipelines, deploying production applications, configuring Linux servers, and working with Docker and Kubernetes for scalable infrastructure. I also have front-end development experience using JavaScript and React.js during my internship, building responsive and user-friendly web interfaces."
         />
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap gap-20 justify-center">
 
       
       {/* Content Left */}
@@ -61,7 +61,7 @@ const WorkExperience = () => {
         />
       ))}
       </div>
-    </div>
+    </section>
   );
 };
 
