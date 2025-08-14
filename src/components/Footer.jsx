@@ -5,12 +5,12 @@ const DataFooter = [
     links: ["Contact", "About", "Services", "Blog"]
   },
   {
-    title: "Resources",
-    links: ["Docs", "Tutorials", "FAQ"]
+    title: "Hobbies",
+    links: ["Badminton", "Karate", "Digital Content", "Singging"]
   },
   {
-    title: "Social",
-    links: ["Instagram", "LinkedIn", "GitHub", "Twitter"]
+    title: "Core",
+    links: ["DevOps", "System Administrator", "IT Infrastructure", "Website Development","IT System Analyst"]
   }
 ];
 
