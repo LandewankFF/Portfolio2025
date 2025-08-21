@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const navLink = [
+    { name: "Home", path: "#home" },
     { name: "About", path: "#about" },
     { name: "Blog", path: "#blog" },
     { name: "Project", path: "#project" },

@@ -5,6 +5,7 @@ import Services from './components/Services'
 import Project from './components/Project'  
 import WorkExperience from './components/WorkExperience'
 import Footer from './components/Footer'
+import Contact from './components/contact'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Services/>
       <Project/>
       <WorkExperience/>
+      <Contact/>
       <Footer/>
 
     </>
