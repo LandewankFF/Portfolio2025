@@ -47,7 +47,7 @@ const WorkExperience = () => {
 
       {/* Content Mid */}
       <div className="flex items-center justify-center">
-        <VerticalTimeline items={["red", "navy"]} gap={28} />
+        <VerticalTimeline items={["red", "white"]} gap={28} />
       </div>
 
       {/* Content Right */}

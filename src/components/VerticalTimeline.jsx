@@ -1,7 +1,7 @@
 
 const dotColors = {
-  red: "bg-[#B70B1B]",      
-  navy: "bg-[#203042]",
+  white: "bg-[#fce6e9]",      
+  red: "bg-[#dd0026]",
 };
 
 export default function VerticalTimeline({ items = ["red","navy","red"], gap = 28 }) {
@@ -19,8 +19,8 @@ export default function VerticalTimeline({ items = ["red","navy","red"], gap = 2
           <li key={i}>
             {/* Lingkaran berwarna + ring putih + border luar */}
             <span
-              className={`inline-block w-6 h-6 rounded-full ring-4 ring-amber-600 border-2 border-slate-700 ${
-                dotColors[color] ?? dotColors.red
+              className={`inline-block w-6 h-6 rounded-full ring-4 border-1 border-black ${
+                dotColors[color] ?? dotColors.white
               }`}
             />
           </li>

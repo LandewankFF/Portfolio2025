@@ -1,64 +1,190 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import InlineContent from "./Button/Inlinecontent";
 import SocialMedia from "./Button/SocialMedia";
 
 const DataContact = [
-  {
-    logo: "call",
-    text: "+6285774512290",
-  },
-  {
-    logo: "mail",
-    text: "landewankfahrezaf@gmail.com",
-  },
-  {
-    logo: "location",
-    text: "West Java, Indonesia",
-  },
+  { logo: "call", text: "+6285774512290" },
+  { logo: "mail", text: "landewankfahrezaf@gmail.com" },
+  { logo: "location", text: "West Java, Indonesia" },
 ];
 
 const socialMediaData = [
-  { name: "logo-instagram" },
-  { name: "logo-tiktok" },
-  { name: "logo-linkedin" },
+  { name: "logo-instagram", url: "https://www.instagram.com/landewank13/" },
+  { name: "logo-tiktok", url: "https://www.tiktok.com/@larefi_firdaus" },
+  {
+    name: "logo-linkedin",
+    url: "https://www.linkedin.com/in/landewank-fahreza-firdaus/",
+  },
+  {
+    name: "logo-youtube",
+    url: "https://www.youtube.com/@landewankfahrezafirdaus",
+  },
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+  fullname: "",
+  email: "",
+  phone: "",
+  message: "",
+})
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  // handle input
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // validasi
+  const validate = () => {
+    let newErrors = {};
+
+    if (!formData.fullname.trim()) newErrors.fullname = "Full name is required";
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^[0-9]{10,15}$/.test(formData.phone)) {
+      newErrors.phone = "Phone number must be 10-15 digits";
+    }
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (!validate()) return; // 👉 jalankan validasi dulu
+
+  setFormData({ fullname: "", email: "", phone: "", message: "" });
+  alert("Form submitted ✅");
+};
+
+
   return (
     <section className="bg-dark-active mt-5">
-      <div className="container mx-auto flex w-full h-[500px] py-8">
+      <div className="container mx-auto flex w-full py-8">
         {/* content left */}
-        <div className="w-1/2  text-white flex flex-col justify-between ">
-          <div className="">
-            <div className="">
-              <h1 className="text-4xl font-bold">Any Project?</h1>
-              <p>
-                Have a question or a project in mind? I'd love to hear from you.
-                Let's chat and make something amazing together.
-              </p>
-            </div>
+        <div className="w-1/2 text-white flex flex-col justify-between">
+          <div>
+            <h1 className="text-4xl font-bold">Any Project?</h1>
+            <p className="mt-2.5">
+              Have a question or a project in mind? I'd love to hear from you.
+              Let's chat and make something amazing together. Collaboration is
+              the key to building something impactful. Don’t hesitate to share
+              your thoughts, even if it’s just a simple idea — together we can
+              shape it into something bigger and better.
+            </p>
           </div>
+
           {/* Contact */}
           <div className="flex flex-col gap-3">
             {DataContact.map((contact, idx) => (
               <InlineContent
-                key={contact.idx}
+                key={idx}
                 logo={contact.logo}
                 text={contact.text}
               />
             ))}
           </div>
+
           {/* social media */}
           <div className="flex gap-4">
             {socialMediaData.map((icon, idx) => (
-              <SocialMedia 
-                key={idx} 
-                icon={icon.name} 
-              />
+              <SocialMedia key={idx} icon={icon.name} url={icon.url} />
             ))}
           </div>
         </div>
+
         {/* content right */}
-        <div className="w-1/2 bg-amber-200"></div>
+        <div className="w-1/2">
+          <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-lg mx-auto shadow-lg space-y-3 p-6 rounded-xl bg-white"
+          >
+            {/* Full Name */}
+            <div>
+              <input
+                type="text"
+                name="fullname"
+                placeholder="Full Name"
+                value={formData.fullname}
+onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
+                className={`w-full p-3 rounded-xl border ${
+                  errors.fullname ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-primary`}
+              />
+              {errors.fullname && (
+                <p className="text-red-500 text-sm mt-1">{errors.fullname}</p>
+              )}
+            </div>
+
+            {/* Email */}
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className={`w-full p-3 rounded-xl border ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-primary`}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
+            </div>
+
+            {/* Phone Number */}
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className={`w-full p-3 rounded-xl border ${
+                  errors.phone ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-primary`}
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+              )}
+            </div>
+
+            {/* Message */}
+            <div>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                value={formData.message}
+onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className={`w-full h-35 p-3 rounded-xl border resize-none ${
+                  errors.message ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-primary`}
+              />
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+              )}
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-primary hover:bg-primary-hover text-white py-3 rounded-xl transition duration-300 ease-in-out disabled:opacity-50"
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
