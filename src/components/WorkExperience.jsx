@@ -31,35 +31,37 @@ const WorkExperience = () => {
           description="I am a DevOps Engineer with experience in managing CI/CD pipelines, deploying production applications, configuring Linux servers, and working with Docker and Kubernetes for scalable infrastructure. I also have front-end development experience using JavaScript and React.js during my internship, building responsive and user-friendly web interfaces."
         />
       </div>
-      <div className="flex flex-wrap gap-20 justify-center">
+      <div className="flex flex-col lg:flex-row lg:gap-20 gap-10 justify-center items-center my-10">
+        {/* Content Left */}
+        <div className="w-full sm:w-[350px] md:w-[400px] lg:w-[450px]">
+          {ExperienceDataleft.map((item, idx) => (
+            <JobDesc
+              key={`left-${idx}`}
+              position={item.position}
+              company={item.company}
+              date={item.date}
+              description={item.description}
+            />
+          ))}
+        </div>
 
-      
-      {/* Content Left */}
-      {ExperienceDataleft.map((item, idx) => (
-        <JobDesc
-          key={`left-${idx}`}
-          position={item.position}
-          company={item.company}
-          date={item.date}
-          description={item.description}
-        />
-      ))}
+        {/* Content Mid */}
+        <div className="hidden lg:flex items-center justify-center">
+          <VerticalTimeline items={["red", "white"]} gap={28} />
+        </div>
 
-      {/* Content Mid */}
-      <div className="flex items-center justify-center">
-        <VerticalTimeline items={["red", "white"]} gap={28} />
-      </div>
-
-      {/* Content Right */}
-      {ExperienceDataright.map((item, idx) => (
-        <JobDesc
-          key={`right-${idx}`}
-          position={item.position}
-          company={item.company}
-          date={item.date}
-          description={item.description}
-        />
-      ))}
+        {/* Content Right */}
+        <div className="w-full sm:w-[350px] md:w-[400px] lg:w-[450px]">
+          {ExperienceDataright.map((item, idx) => (
+            <JobDesc
+              key={`right-${idx}`}
+              position={item.position}
+              company={item.company}
+              date={item.date}
+              description={item.description}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

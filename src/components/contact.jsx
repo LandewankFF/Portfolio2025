@@ -24,11 +24,11 @@ const socialMediaData = [
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-  fullname: "",
-  email: "",
-  phone: "",
-  message: "",
-})
+    fullname: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -58,23 +58,22 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  if (!validate()) return; // 👉 jalankan validasi dulu
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) return; // 👉 jalankan validasi dulu
 
-  setFormData({ fullname: "", email: "", phone: "", message: "" });
-  alert("Form submitted ✅");
-};
-
+    setFormData({ fullname: "", email: "", phone: "", message: "" });
+    alert("Form submitted ✅");
+  };
 
   return (
     <section className="bg-dark-active mt-5">
-      <div className="container mx-auto flex w-full py-8">
+      <div className="container mx-auto flex flex-col md:flex-row w-full py-8 gap-6">
         {/* content left */}
-        <div className="w-1/2 text-white flex flex-col justify-between">
+        <div className="w-full md:w-1/2 text-white flex flex-col justify-between gap-6">
           <div>
-            <h1 className="text-4xl font-bold">Any Project?</h1>
-            <p className="mt-2.5">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">Any Project?</h1>
+            <p className="mt-2.5 text-sm md:text-base leading-relaxed">
               Have a question or a project in mind? I'd love to hear from you.
               Let's chat and make something amazing together. Collaboration is
               the key to building something impactful. Don’t hesitate to share
@@ -95,7 +94,7 @@ const handleSubmit = (e) => {
           </div>
 
           {/* social media */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-4 md:mt-0 justify-center md:justify-start">
             {socialMediaData.map((icon, idx) => (
               <SocialMedia key={idx} icon={icon.name} url={icon.url} />
             ))}
@@ -103,10 +102,10 @@ const handleSubmit = (e) => {
         </div>
 
         {/* content right */}
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           <form
             onSubmit={handleSubmit}
-            className="w-full max-w-lg mx-auto shadow-lg space-y-3 p-6 rounded-xl bg-white"
+            className="w-full max-w-md md:max-w-lg mx-auto shadow-lg space-y-3 p-6 rounded-xl bg-white"
           >
             {/* Full Name */}
             <div>
@@ -115,7 +114,9 @@ const handleSubmit = (e) => {
                 name="fullname"
                 placeholder="Full Name"
                 value={formData.fullname}
-onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, fullname: e.target.value })
+                }
                 className={`w-full p-3 rounded-xl border ${
                   errors.fullname ? "border-red-500" : "border-gray-300"
                 } focus:outline-none focus:ring-2 focus:ring-primary`}
@@ -132,7 +133,9 @@ onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
                 name="email"
                 placeholder="Email"
                 value={formData.email}
-onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className={`w-full p-3 rounded-xl border ${
                   errors.email ? "border-red-500" : "border-gray-300"
                 } focus:outline-none focus:ring-2 focus:ring-primary`}
@@ -149,7 +152,9 @@ onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 name="phone"
                 placeholder="Phone Number"
                 value={formData.phone}
-onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
                 className={`w-full p-3 rounded-xl border ${
                   errors.phone ? "border-red-500" : "border-gray-300"
                 } focus:outline-none focus:ring-2 focus:ring-primary`}
@@ -165,7 +170,9 @@ onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 name="message"
                 placeholder="Your Message"
                 value={formData.message}
-onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 className={`w-full h-35 p-3 rounded-xl border resize-none ${
                   errors.message ? "border-red-500" : "border-gray-300"
                 } focus:outline-none focus:ring-2 focus:ring-primary`}
