@@ -67,7 +67,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-dark-active mt-5">
+    <section className="bg-dark-active mt-5 px-5">
       <div className="container mx-auto flex flex-col md:flex-row w-full py-8 gap-6">
         {/* content left */}
         <div className="w-full md:w-1/2 text-white flex flex-col justify-between gap-6">

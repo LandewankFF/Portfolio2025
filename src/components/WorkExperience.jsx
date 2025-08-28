@@ -31,9 +31,10 @@ const WorkExperience = () => {
           description="I am a DevOps Engineer with experience in managing CI/CD pipelines, deploying production applications, configuring Linux servers, and working with Docker and Kubernetes for scalable infrastructure. I also have front-end development experience using JavaScript and React.js during my internship, building responsive and user-friendly web interfaces."
         />
       </div>
-      <div className="flex flex-col lg:flex-row lg:gap-20 gap-10 justify-center items-center my-10">
+
+      <div className="flex flex-col lg:flex-row lg:gap-20 md:gap-5 gap-2 justify-center items-center my-10">
         {/* Content Left */}
-        <div className="w-full sm:w-[350px] md:w-[400px] lg:w-[450px]">
+        <div className="w-full sm:max-w-md md:max-w-full lg:w-[450px]">
           {ExperienceDataleft.map((item, idx) => (
             <JobDesc
               key={`left-${idx}`}
@@ -45,13 +46,13 @@ const WorkExperience = () => {
           ))}
         </div>
 
-        {/* Content Mid */}
+        {/* Content Mid (only desktop) */}
         <div className="hidden lg:flex items-center justify-center">
           <VerticalTimeline items={["red", "white"]} gap={28} />
         </div>
 
         {/* Content Right */}
-        <div className="w-full sm:w-[350px] md:w-[400px] lg:w-[450px]">
+        <div className="w-full sm:max-w-md md:max-w-full lg:w-[450px]">
           {ExperienceDataright.map((item, idx) => (
             <JobDesc
               key={`right-${idx}`}

@@ -10,7 +10,7 @@ const DataFooter = [
   },
   {
     title: "Core",
-    links: ["DevOps", "System Administrator", "IT Infrastructure", "Website Development","IT System Analyst"]
+    links: ["DevOps", "System Administrator", "IT Infrastructure","IT System Analyst"]
   }
 ];
 
@@ -26,9 +26,9 @@ const Footer = () => {
 
         {/* Bagian Menu Footer */}
         {DataFooter.map((section, idx) => (
-          <div key={idx} className="mb-">
-            <h1 className="font-extrabold mb-2 text-lg md:text-xl">{section.title}</h1>
-            <ul className="space-y-1">
+          <div key={idx} className="mx-auto flex flex-col sm:items-center md:items-start">
+            <h1 className="font-extrabold mb-2 text-lg md:text-xl flex sm:flex sm:items-center">{section.title}</h1>
+            <ul className="space-y-1 flex flex-col items-center md:items-start">
               {section.links.map((link, i) => (
                 <li key={i} className="text-sm md:text-base text-gray-700 hover:underline cursor-pointer">
                   {link}

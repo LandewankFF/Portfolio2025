@@ -1,7 +1,7 @@
 const JobDesc = ({position, company, date, description}) =>{
     return(
         <>
-        <div className="w-[450px]">
+        <div className="sm:w-full lg:max-w-[450px] md:w-[300px]sm:px-0 px-5">
             <h1 className="text-[40px] font-bold">{position}</h1>
             <address className="font-semibold text-2xl">{company}</address>
             <time className="text-gray-400">{date}</time>

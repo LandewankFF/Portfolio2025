@@ -5,7 +5,7 @@ const Title = ({ title, description }) => {
         <h1 className="text-primary text-[44px] font-bold text-center">{title}</h1>
       </div>
       <div className="w-full inline-flex justify-center">
-        <p className="max-w-[800px] w-full px-4 text-center">{description}</p>
+        <p className="max-w-[800px] w-full px-2 text-center">{description}</p>
       </div>
     </>
   );
