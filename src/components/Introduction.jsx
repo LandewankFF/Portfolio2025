@@ -24,7 +24,7 @@ const Introduction = () => {
                   Engineer, Computer Networking, IT
                   Infrastructure and System Analysist. I want to have a career
                   in IT, and I am committed to continuing to grow and deliver
-                  innovative solutions.
+                  innovative solutions. I always uphold the values of discipline, work order, collaboration ability, one-one cycle work, and a sense of responsibility in every task I carry out.
                 </p>
               </div>
               {/* Button */}
@@ -38,7 +38,7 @@ const Introduction = () => {
                 </div>
                 <div className="flex">
                   <Line
-                    text="View Portofolio"
+                    text="About Me"
                     textColorHover="group-hover:text-black"
                     textColor="text-primary"
                   />
@@ -49,7 +49,7 @@ const Introduction = () => {
 
           {/* Content Right */}
           <div className="w-1/2 md:w-full flex items-center justify-center">
-            <div className="">
+            + <div className="w-full sm:w-3/4 md:w-full lg:w-1/2 flex items-center justify-center">
               <img src={photo} alt="photo landing" />
             </div>
           </div>

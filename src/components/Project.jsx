@@ -69,7 +69,7 @@ const Project = () => {
         </div>
         <div className="flex justify-center mt-2">
           <Line
-            text="View Portofolio"
+            text="View All Project"
             textColorHover="group-hover:text-black"
             textColor="text-primary"
           />
