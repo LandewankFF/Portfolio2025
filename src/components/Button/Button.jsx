@@ -16,7 +16,6 @@ const Circle = ({text,background,hover,icon}) => {
                 <div className="text-white">
                     <ion-icon name={icon}></ion-icon>
                 </div>
-                {/* <ion-icon name="cloud-download-outline"></ion-icon> */}
             </button>
         </>
     )
