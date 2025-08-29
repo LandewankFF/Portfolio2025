@@ -7,7 +7,7 @@ const Introduction = () => {
         {/* container */}
         <div className="w-full px-[20px] md:px-[50px] lg:px-[80px] xl:px-[122px] flex flex-col lg:flex-row lg:justify-between items-center mt-10 mb-10">
           {/* Content Left */}
-          <div className="w-1/2 md:w-full items-center justify-center flex ">
+          <div className="w-full md:w-1/2 items-center justify-center flex px-5">
             <div className="flex-col gap-2.5 flex">
               {/* name */}
               <div className="">
@@ -48,7 +48,7 @@ const Introduction = () => {
           </div>
 
           {/* Content Right */}
-          <div className="w-1/2 md:w-full flex items-center justify-center">
+          <div className="w-full sm:w-3/4 md:w-full lg:w-1/2 flex items-center justify-center">
             <div className="">
               <img src={photo} alt="photo landing" />
             </div>
