@@ -5,14 +5,14 @@ const Introduction = () => {
     <>
       <section>
         {/* container */}
-        <div className="w-full px-[20px] md:px-[50px] lg:px-[80px] xl:px-[122px] flex flex-col lg:flex-row lg:justify-between items-center mt-10 mb-10">
+        <div className="w-full px-[20px] md:px-[50px] lg:px-[80px] xl:px-[122px] flex flex-col lg:flex-row lg:justify-between items-center mt-5 mb-10">
           {/* Content Left */}
-          <div className="w-full items-center justify-center flex px-5">
+          <div className="w-full sm:w-3/4 md:w-full lg:w-1/2 items-center justify-center flex">
             <div className="flex-col gap-2.5 flex">
               {/* name */}
               <div className="">
-                <h3 className="font-bold text-[20px]">Hello, I’m </h3>
-                <h1 className="font-bold text-[44px]">
+                <h3 className="font-bold text-lg sm:text-xl md:text-2xl">Hello, I’m </h3>
+                <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[44px]">
                   Landewank Fahreza Firdaus
                 </h1>
               </div>

@@ -26,7 +26,7 @@ const Footer = () => {
 
         {/* Bagian Menu Footer */}
         {DataFooter.map((section, idx) => (
-          <div key={idx} className="mmx-auto flex flex-col items-center md:items-start">
+          <div key={idx} className="mx-auto flex flex-col items-center md:items-start">
             <h1 className="font-extrabold mb-2 text-lg md:text-xl text-center md:text-left">{section.title}</h1>
             <ul className="space-y-1 flex flex-col items-center md:items-start">
               {section.links.map((link, i) => (
