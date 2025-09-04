@@ -60,10 +60,47 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validate()) return; // 👉 jalankan validasi dulu
+    if (!validate()) return;
 
-    setFormData({ fullname: "", email: "", phone: "", message: "" });
-    alert("Form submitted ✅");
+    setLoading(true);
+
+    // 1) Kirim pesan ke kamu (Contact Us template)
+    emailjs
+      .send(
+        "service_8t64hom",
+        "template_e6ibg7v", // 👉 ID template untuk kamu
+        {
+          fullname: formData.fullname,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "gQXwdD4ixFIRYpGL8" //public key
+      )
+      .then(() => {
+        // 2) Kirim auto-reply ke user
+        return emailjs.send(
+          "service_8t64hom",
+          "template_sailo4p", // auto reply
+          {
+            from_name: formData.fullname, 
+            from_email: formData.email, 
+            phone: formData.phone, 
+            message: formData.message, 
+          },
+          "gQXwdD4ixFIRYpGL8"
+        );
+      })
+      .then(() => {
+        alert("Message sent successfully ✅");
+        setFormData({ fullname: "", email: "", phone: "", message: "" }); // reset form
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("FAILED...", err);
+        alert("Failed to send message ❌, please try again.");
+        setLoading(false);
+      });
   };
 
   return (
@@ -72,7 +109,9 @@ const Contact = () => {
         {/* content left */}
         <div className="w-full md:w-1/2 text-white flex flex-col justify-between gap-6">
           <div>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">Any Project?</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+              Any Project?
+            </h1>
             <p className="mt-2.5 text-sm md:text-base leading-relaxed">
               Have a question or a project in mind? I'd love to hear from you.
               Let's chat and make something amazing together. Collaboration is
