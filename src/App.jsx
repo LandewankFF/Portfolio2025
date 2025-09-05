@@ -11,13 +11,15 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-      <Introduction/>
-      <Services/>
-      <Project/>
-      <WorkExperience/>
-      <Contact/>
-      <Footer/>
+      <div className="overflow-x-hidden">
+        <Navbar/>
+        <Introduction/>
+        <Services/>
+        <Project/>
+        <WorkExperience/>
+        <Contact/>
+        <Footer/>
+      </div>
 
     </>
   )

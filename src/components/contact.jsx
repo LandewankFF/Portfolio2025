@@ -107,7 +107,7 @@ const Contact = () => {
     <section className="bg-dark-active mt-5 px-5">
       <div className="container mx-auto flex flex-col md:flex-row w-full py-8 gap-6">
         {/* content left */}
-        <div className="w-full md:w-1/2 text-white flex flex-col justify-between gap-6">
+        <div data-aos-duration="1000" data-aos="fade-right" className="w-full md:w-1/2 text-white flex flex-col justify-between gap-6">
           <div>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
               Any Project?
@@ -141,7 +141,7 @@ const Contact = () => {
         </div>
 
         {/* content right */}
-        <div className="w-full md:w-1/2">
+        <div data-aos="fade-left" data-aos-duration="1000" className="w-full md:w-1/2">
           <form
             onSubmit={handleSubmit}
             className="w-full max-w-md md:max-w-lg mx-auto shadow-lg space-y-3 p-6 rounded-xl bg-white"

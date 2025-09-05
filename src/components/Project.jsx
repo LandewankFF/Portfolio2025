@@ -48,7 +48,7 @@ const cardData = [
 const Project = () => {
   return (
     <section className="py-10">
-      <div className="mb-8 px-[20px] md:px-[50px] lg:px-[80px] xl:px-[122px]">
+      <div data-aos="zoom-in" className="mb-8 px-[20px] md:px-[50px] lg:px-[80px] xl:px-[122px]">
         <Title
           title="Project"
           description="Showcasing my journey in IT through real-world projects. From web development to DevOps, each project reflects my passion for innovation and problem-solving."
@@ -57,10 +57,10 @@ const Project = () => {
 
       {/* Flex Card Container */}
       <div className="px-[20px] md:px-[50px] lg:px-[80px] xl:px-[122px]">
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
+        <div data-aos="fade-up" data-aos-duration="2000" className="flex flex-wrap justify-center gap-x-6 gap-y-8">
           {cardData.map((card, index) => (
             <CardProject
-              key={index}
+              key={index} 
               imgSrc={card.imgSrc}
               title={card.title}
               caption={card.caption}
