@@ -1,28 +1,19 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import Introduction from './components/Introduction'
-import Services from './components/Services'
-import Project from './components/Project'  
-import WorkExperience from './components/WorkExperience'
-import Footer from './components/Footer'
-import Contact from './components/contact'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/Home'
+import About from './pages/About'
+import Blog from './pages/Blog'
+
 
 function App() {
-
   return (
-    <>
-      <div className="overflow-x-hidden">
-        <Navbar/>
-        <Introduction/>
-        <Services/>
-        <Project/>
-        <WorkExperience/>
-        <Contact/>
-        <Footer/>
-      </div>
-
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/blog' element={<Blog />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

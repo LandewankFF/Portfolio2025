@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   const navLink = [
-    { name: "Home", path: "#home" },
-    { name: "About", path: "#about" },
-    { name: "Blog", path: "#blog" },
-    { name: "Project", path: "#project" },
-    { name: "certificate", path: "#certificate" },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Blog", path: "/blog" },
+    { name: "Project", path: "/project" },
+    { name: "Certificate", path: "/certificate" },
   ];
 
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -17,20 +18,21 @@ const Navbar = () => {
         <div className="px-[20px] md:px-[50px] lg:px-[80px] xl:px-[122px] flex justify-between items-center">
           {/* Logo */}
           <div>
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="hidden lg:block bg-gradient-to-r from-dark to-primary font-extrabold text-transparent bg-clip-text text-xl"
             >
               Landewank Fahreza Firdaus
-            </a>
+            </Link>
 
             {/* Mobile Name */}
-            <a
-              href="#about"
+
+            <Link
+              to="/about"
               className="lg:hidden md:block bg-gradient-to-r from-dark to-primary font-extrabold text-transparent bg-clip-text text-xl"
             >
               Landewank FF
-            </a>
+            </Link>
           </div>
 
           {/* Navigation Menu (Single Code for Both Desktop & Mobile) */}
@@ -42,13 +44,17 @@ const Navbar = () => {
             <ul className="flex flex-col md:flex-row gap-6 items-center">
               {navLink.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.path}
-                    className="text-white md:text-black hover:text-gray-300 md:hover:text-primary transition"
-                    onClick={() => setToggleMenu(false)} // Close menu on click (only in mobile)
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-primary font-bold"
+                        : "text-white md:text-black hover:text-gray-300 md:hover:text-primary transition"
+                    }
+                    onClick={() => setToggleMenu(false)}
                   >
                     {link.name}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>
