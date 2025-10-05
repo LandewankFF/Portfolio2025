@@ -3,7 +3,8 @@ import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 import Footer from '../components/Footer'
 
-import awsDicoding from "../assets/Certificates/aws_dicoding.jpg";
+// import awsDicoding from "../assets/Certificates/aws_dicoding.jpg";
+import certificatesAssets from "../assets/Certificates/images";
 import bgCertificate from "../assets/Certificates/aws_dicoding.jpg";
 
 const Certificate = () => {
@@ -13,33 +14,33 @@ const Certificate = () => {
   const certificates = [
     {
       id: 1,
-      title: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      issueDate: "2023-05-12",
-      validUntil: "2026-05-12",
+      title: "Cloud Practitioner Essentials",
+      issuer: "Dicoding Indonesia",
+      issueDate: "2023-9-11",
+      validUntil: "2025-9-11",
       description:
-        "Foundational cloud knowledge covering AWS services and architecture.",
-      image: awsDicoding,
+        "Introduction to AWS, Cloud Computing, Global Infrastructure, Networking, Storage & Databases, Security, Monitoring & Analytics, Pricing & Support, Migration & Innovation, Cloud Journey, AWS Cloud Practitioner Basics.",
+      image: certificatesAssets.aws_dicoding,
     },
     {
       id: 2,
-      title: "Cisco CCNA",
-      issuer: "Cisco",
-      issueDate: "2022-08-20",
-      validUntil: "2025-08-20",
+      title: "CI/CD Implementation",
+      issuer: "Dicoding Indonesia",
+      issueDate: "2023-10-10",
+      validUntil: "2023-10-10",
       description:
-        "Networking fundamentals, IP services, security fundamentals, automation, and programmability.",
-      image: "/certificates/cisco-ccna.png",
+        "Introduction to CI/CD, Continuous Integration, Continuous Deployment, Operations & Monitoring, and DevSecOps.",
+      image: certificatesAssets.cicd,
     },
     {
       id: 3,
-      title: "Docker Essentials",
-      issuer: "Docker Inc.",
-      issueDate: "2024-01-10",
+      title: "Introduction Linux",
+      issuer: "The Linux Foundation",
+      issueDate: "2025-08-07",
       validUntil: "Lifetime",
       description:
         "Introduction to containerization using Docker CLI and Docker Compose.",
-      image: "/certificates/docker-essentials.png",
+      image: certificatesAssets.Linux,
     },
   ];
 
@@ -134,14 +135,13 @@ const Certificate = () => {
         {selectedCert && (
           <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 px-4">
             <div className="bg-white rounded-xl max-w-3xl w-full p-6 relative">
-              {/* Close Button */}
+              {/* Close Button
               <button
                 onClick={() => setSelectedCert(null)}
                 className="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl"
               >
                 &times;
-              </button>
-
+              </button> */}
               {/* Image Preview */}
               <div className="w-full flex justify-center mb-6">
                 <img
