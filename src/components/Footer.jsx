@@ -16,8 +16,8 @@ const DataFooter = [
 
 const Footer = () => {
   return (
-    <footer className=" py-10">
-      <div className="mb-8 px-5 md:px-12 lg:px-20 xl:px-32 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16">
+    <footer className="bg-gray-100 py-10">
+      <div className="mb-8 px-5 md:px-12 lg:px-20 xl:px-32 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 ">
         {/* Bagian Nama */}
         <div className="text-center sm:text-left">
           <h1 className="text-[25px] font-extrabold ">Landewank Fahreza Firdaus</h1>
