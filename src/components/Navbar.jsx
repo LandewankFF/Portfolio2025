@@ -19,7 +19,7 @@ const Navbar = () => {
           {/* Logo */}
           <div>
             <Link
-              to="/about"
+              to="/"
               className="hidden lg:block bg-gradient-to-r from-dark to-primary font-extrabold text-transparent bg-clip-text text-xl"
             >
               Landewank Fahreza Firdaus
@@ -28,7 +28,7 @@ const Navbar = () => {
             {/* Mobile Name */}
 
             <Link
-              to="/about"
+              to="/"
               className="lg:hidden md:block bg-gradient-to-r from-dark to-primary font-extrabold text-transparent bg-clip-text text-xl"
             >
               Landewank FF
