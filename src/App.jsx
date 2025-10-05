@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import NotFound from './pages/NotFound'; 
+import Certificate from "./pages/Certificate";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/blog' element={<Blog />} />
+        <Route path='/certificate' element={<Certificate />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
