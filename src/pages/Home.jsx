@@ -10,13 +10,13 @@ function App() {
   return (
     <>
      <div className="overflow-x-hidden">
-        <Navbar/>
+        {/* <Navbar/> */}
         <Introduction/>
         <Services/>
         <Project/>
         <WorkExperience/>
         <Contact/>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     </>
   );

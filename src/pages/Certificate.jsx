@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HeroSection from "../components/HeroSection";
-import Navbar from "../components/Navbar";
-import Footer from '../components/Footer'
+// import Navbar from "../components/Navbar";
+// import Footer from '../components/Footer'
 
 // import awsDicoding from "../assets/Certificates/aws_dicoding.jpg";
 import certificatesAssets from "../assets/Certificates/images";
@@ -59,7 +59,7 @@ const Certificate = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroSection
         title="My Certificates"
         subtitle="Kumpulan sertifikat dari perjalanan belajar dan pengalaman saya. Sertifikat terbaru selalu tampil di atas."
@@ -178,7 +178,7 @@ const Certificate = () => {
         )}
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
