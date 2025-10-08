@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './pages/Home'
 import About from './pages/About'
+import Project from "./pages/Project";
 import Blog from './pages/Blog'
 import NotFound from './pages/NotFound'; 
 import Certificate from "./pages/Certificate";
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
+        <Route path='/project' element={<Project />} />
         <Route path='/certificate' element={<Certificate />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
