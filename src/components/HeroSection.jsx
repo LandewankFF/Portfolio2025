@@ -4,13 +4,13 @@ const HeroSection = ({ title, subtitle, backgroundImage }) => {
     <section
       className="relative w-full h-[60vh] flex items-center justify-center text-center text-white"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       {/* Overlay biar tulisan jelas */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div> {/* lebih terang */}
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl px-6">

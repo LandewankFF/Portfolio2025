@@ -1,11 +1,11 @@
 import { useState } from "react";
-import HeroSection from "../components/HeroSection";
+// import HeroSection from "../components/HeroSection"; // ← HAPUS atau comment
 // import Navbar from "../components/Navbar";
 // import Footer from '../components/Footer'
 
 // import awsDicoding from "../assets/Certificates/aws_dicoding.jpg";
 import certificatesAssets from "../assets/Certificates/images";
-import bgCertificate from "../assets/Certificates/aws_dicoding.jpg";
+// import bgCertificate from "../assets/Certificates/aws_dicoding.jpg";
 
 const Certificate = () => {
   const [search, setSearch] = useState("");
@@ -60,37 +60,43 @@ const Certificate = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <HeroSection
-        title="My Certificates"
-        subtitle="Kumpulan sertifikat dari perjalanan belajar dan pengalaman saya. Sertifikat terbaru selalu tampil di atas."
-        backgroundImage={bgCertificate}
-      />
+      
+      {/* Header Section - Ganti HeroSection */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-32 py-12">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="text-4xl text-primary">
+              <ion-icon name="ribbon"></ion-icon>
+            </div>
+            <h1 className="text-4xl font-bold text-gray-900">My Certificates</h1>
+          </div>
+          <p className="text-gray-600 text-lg">
+            Professional certifications and achievements from my learning journey in IT infrastructure and DevOps.
+          </p>
+        </div>
+      </div>
+
       <section className="px-6 md:px-20 lg:px-32 py-12">
-        {/* <h1 className="text-3xl font-bold mb-8 text-center">My Certificates</h1> */}
+        {/* Search */}
+        <div className="max-w-md mx-auto mb-10 overflow-hidden">
+          <div className="relative flex items-center">
+            <input
+              type="text"
+              placeholder="Search certificates..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg"
+            />
 
-{/* Search */}
-<div className="max-w-md mx-auto mb-10 overflow-hidden">
-  <form
-    onSubmit={(e) => e.preventDefault()}
-    className="relative flex items-center"
-  >
-    <input
-      type="text"
-      placeholder="Search certificates..."
-      value={search}
-      onChange={(e) => setSearch(e.target.value)}
-      className="w-full px-4 py-2 border rounded-lg"
-    />
-
-    {/* Search Icon */}
-    <button
-      type="submit"
-      className="absolute right-0 text-2xl p-2 bg-black rounded-lg text-white"
-    >
-        <ion-icon name="search"></ion-icon>
-    </button>
-  </form>
-</div>
+            {/* Search Icon */}
+            <button
+              type="button"
+              className="absolute right-0 text-2xl p-2 bg-black rounded-lg text-white"
+            >
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </div>
+        </div>
 
         {/* Certificate Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -135,13 +141,6 @@ const Certificate = () => {
         {selectedCert && (
           <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 px-4">
             <div className="bg-white rounded-xl max-w-3xl w-full p-6 relative">
-              {/* Close Button
-              <button
-                onClick={() => setSelectedCert(null)}
-                className="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl"
-              >
-                &times;
-              </button> */}
               {/* Image Preview */}
               <div className="w-full flex justify-center mb-6">
                 <img
