@@ -1,9 +1,14 @@
-import React from 'react'
+import Introduction from "../components/Introduction"
+import SkillSet from "../components/SkillSet"
+import WorkExperience from "../components/WorkExperience"
 
 function About() {
   return (
-    <div>Page About
-    </div>
+    <>
+      <Introduction/>
+      <SkillSet/>
+      <WorkExperience/>
+    </>
   )
 }
 
