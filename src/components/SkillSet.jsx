@@ -1,5 +1,10 @@
 import React from 'react';
 import { 
+  SearchCheck,
+  Hexagon as nodejs,
+  Atom as reactjs,
+  Brush as drawio,
+  BookOpenText as document,
   Code2, 
   Container, 
   GitBranch, 
@@ -10,7 +15,8 @@ import {
   Layers,
   Terminal,
   Figma as FigmaIcon,
-  Workflow
+  Workflow,
+  icons,
 } from 'lucide-react';
 
 const SkillSet = () => {
@@ -20,17 +26,22 @@ const SkillSet = () => {
     { name: 'Jenkins', icon: Workflow, category: 'CI/CD' },
     { name: 'GitHub Actions', icon: GitBranch, category: 'CI/CD' },
     { name: 'GitLab CI/CD', icon: GitBranch, category: 'CI/CD' },
-    { name: 'React.js', icon: Code2, category: 'Frontend' },
+    { name: 'Trivy', icon: SearchCheck, category: 'Security'},
+    { name: 'React.js', icon: reactjs, category: 'Frontend' },
+    { name: 'Node.js', icon: nodejs, category: 'Backend' },
     { name: 'JavaScript', icon: Code2, category: 'Programming' },
     { name: 'Python', icon: Code2, category: 'Programming' },
     { name: 'Git', icon: GitBranch, category: 'Tools' },
     { name: 'Linux', icon: Terminal, category: 'OS' },
+    { name: 'Windows', icon: Terminal, category: 'OS' },
     { name: 'AWS', icon: Cloud, category: 'Cloud' },
     { name: 'Nginx', icon: Server, category: 'Web Server' },
     { name: 'Grafana', icon: Monitor, category: 'Monitoring' },
     { name: 'Prometheus', icon: Database, category: 'Monitoring' },
     { name: 'Figma', icon: FigmaIcon, category: 'Design' },
-    { name: 'VS Code', icon: Code2, category: 'Tools' }
+    { name: 'Draw IO', icon: drawio, category: 'Design' },
+    { name: 'MS Office', icon: document, category:'Documentation'},
+    { name: 'VS Code', icon: Code2, category: 'Code Editor' }
   ];
 
   return (
@@ -62,19 +73,15 @@ const SkillCard = ({ skill }) => {
 
   return (
     <div className="group bg-white rounded-xl p-4 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-gray-200 hover:border-primary hover:-translate-y-1 cursor-pointer">
-      {/* Icon with Background Circle */}
+      
       <div className="relative w-14 h-14 md:w-16 md:h-16 bg-red-50 rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300">
         <IconComponent 
           className="w-7 h-7 md:w-8 md:h-8 text-primary group-hover:text-white transition-colors duration-300"
         />
       </div>
-
-      {/* Skill Name */}
       <p className="text-xs md:text-sm font-semibold text-gray-700 text-center group-hover:text-primary transition-colors">
         {skill.name}
       </p>
-
-      {/* Category Badge (Optional - bisa dihapus kalau ga perlu) */}
       <span className="text-[10px] md:text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
         {skill.category}
       </span>

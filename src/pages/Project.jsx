@@ -1,71 +1,13 @@
 import React, { useState, useMemo } from "react";
+import allProjects from "../data/projects"; 
 import { Search, Github, ExternalLink } from "lucide-react";
-import Navbar from "../components/Navbar";
 
 const ProjectsPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
-  // Sample project data
-  const projects = [
-    {
-      id: 1,
-      title: "Lanafa Temani - Tourism Platform",
-      role: "Full Stack Developer & Business Analyst",
-      description:
-        "Platform digital untuk jasa periklanan & konten kreatif pariwisata. Meningkatkan visibilitas industri pariwisata melalui social media dan konten berkualitas tinggi.",
-      image:
-        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80",
-      techStack: ["React.js", "Node.js", "Jenkins", "Figma", "Docker"],
-      githubUrl: "https://github.com/landewank",
-      demoUrl: "https://lanafatemani.com",
-      date: "2024-07",
-    },
-    {
-      id: 2,
-      title: "RS Medika Nusantara - Healthcare Booking",
-      role: "Full Stack Developer",
-      description:
-        "Platform informasi kesehatan dan booking dokter online. Menyediakan akses digital ke informasi healthcare dan sistem appointment yang user-friendly.",
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
-      techStack: ["React.js", "JavaScript", "Jenkins", "Figma"],
-      githubUrl: "https://github.com/landewank",
-      demoUrl: "https://rsmedikanusantara.com",
-      date: "2025-06",
-    },
-    {
-      id: 3,
-      title: "Jenkins vs GitHub Actions Performance Analysis",
-      role: "DevOps Engineer & Researcher",
-      description:
-        "Research project untuk menganalisis dan membandingkan performa Jenkins dan GitHub Actions dalam proses CI/CD. Mengukur efektivitas automation dalam mempercepat deployment.",
-      image:
-        "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80",
-      techStack: ["Jenkins", "GitHub Actions", "Docker", "React.js", "Node.js"],
-      githubUrl: "https://github.com/landewank",
-      demoUrl: null,
-      date: "2024-01",
-    },
-    {
-      id: 4,
-      title: "CI/CD Pipeline Automation",
-      role: "DevOps Engineer",
-      description:
-        "Implementasi dan optimasi CI/CD pipeline untuk deployment otomatis. Mengurangi deployment time hingga 60% dan meminimalkan human error dalam production release.",
-      image:
-        "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
-      techStack: ["GitLab CI/CD", "Docker", "Kubernetes", "Nginx"],
-      githubUrl: null,
-      demoUrl: null,
-      date: "2023-12",
-    },
-  ];
-
-  // Filter and sort projects based on search (newest to oldest)
   const filteredProjects = useMemo(() => {
-    let result = projects;
+    let result = allProjects;
 
-    // Filter by search query
+    // Filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
@@ -74,14 +16,8 @@ const ProjectsPage = () => {
           project.techStack.some((tech) => tech.toLowerCase().includes(query))
       );
     }
-
-    // Sort by date (newest first)
-    return result.sort((a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      return dateB - dateA; // Descending order (newest first)
-    });
-  }, [searchQuery, projects]);
+    return [...result].sort((a, b) => new Date(b.date) - new Date(a.date));
+  }, [searchQuery, allProjects]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
