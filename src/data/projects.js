@@ -2,7 +2,7 @@ const projects = [
     {
       id: 1,
       title: "Lanafa Temani - Tourism Platform",
-      role: "Full Stack Developer & Business Analyst",
+      role: "Frontend Developer & Business Analyst",
       description:
         "A digital platform for tourism advertising and creative content. Increasing the visibility of the tourism industry through social media and high-quality content.",
       image:
@@ -15,15 +15,15 @@ const projects = [
     {
       id: 2,
       title: "RS Medika Nusantara - Healthcare Booking",
-      role: "Full Stack Developer",
+      role: "Full Stack Developer & UI UX",
       description:
-        "Platform informasi kesehatan dan booking dokter online. Menyediakan akses digital ke informasi healthcare dan sistem appointment yang user-friendly.",
+        "A digital platform for tourism advertising and creative content. Increasing the visibility of the tourism industry through social media and high-quality content.",
       image:
         "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
       techStack: ["React.js", "JavaScript", "Jenkins", "Figma"],
-      githubUrl: "https://github.com/landewank",
-      demoUrl: "https://rsmedikanusantara.com",
-      date: "2025-06",
+      githubUrl: "https://github.com/LandewankFF/Final-Assignment-WebProgramming",
+      demoUrl: "https://rsmedikanusantara.vercel.app/",
+      date: "2024-01",
     },
     {
       id: 3,
@@ -34,22 +34,22 @@ const projects = [
       image:
         "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80",
       techStack: ["Jenkins", "GitHub Actions", "Docker", "React.js", "Node.js"],
-      githubUrl: "https://github.com/landewank",
+      githubUrl: null,
       demoUrl: "https://openlibrary.telkomuniversity.ac.id/home/catalog/id/232374/slug/analisis-performa-jenkins-github-pada-proses-continuous-integration-dan-continuous-deployment-pada-pengembangan-website-dalam-bentuk-buku-karya-ilmiah.html",
       date: "2025-03",
     },
     {
       id: 4,
-      title: "CI/CD Pipeline Automation",
+      title: "How to export and Import Database Postgresql",
       role: "DevOps Engineer",
       description:
-        "Implementasi dan optimasi CI/CD pipeline untuk deployment otomatis. Mengurangi deployment time hingga 60% dan meminimalkan human error dalam production release.",
+        "This guide demonstrates how to migrate a PostgreSQL database from Server A to Server B. This is useful for backups, disaster recovery, and server migration. Scenario: Migrating database from production server to new server",
       image:
-        "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQOsQcdBFSCLl27z5pEgJp8pcWdDho-zUmcAifePpuCs3w8oEeoA0MENdnJTgDeGa-jYo&usqp=CAU",
       techStack: ["GitLab CI/CD", "Docker", "Kubernetes", "Nginx"],
-      githubUrl: null,
+      githubUrl: "https://github.com/LandewankFF/Database-Learnig/blob/main/postgresql/export%26restore.md",
       demoUrl: null,
-      date: "2023-12",
+      date: "2025-10",
     },
 ];
 

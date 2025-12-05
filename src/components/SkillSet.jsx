@@ -17,6 +17,8 @@ import {
   Figma as FigmaIcon,
   Workflow,
   icons,
+  Flame as Prometheus,
+  FileTerminal as Ansible
 } from 'lucide-react';
 
 const SkillSet = () => {
@@ -25,8 +27,11 @@ const SkillSet = () => {
     { name: 'Kubernetes', icon: Layers, category: 'DevOps' },
     { name: 'Jenkins', icon: Workflow, category: 'CI/CD' },
     { name: 'GitHub Actions', icon: GitBranch, category: 'CI/CD' },
-    { name: 'GitLab CI/CD', icon: GitBranch, category: 'CI/CD' },
+    { name: 'GitLab CI', icon: GitBranch, category: 'CI/CD' },
+    { name: 'Ansible', icon: Ansible, category: 'IAC' },
     { name: 'Trivy', icon: SearchCheck, category: 'Security'},
+    { name: 'PostgreSQL', icon: Database, category: 'Database'},
+    { name: 'SQL', icon: Database, category: 'Database'},
     { name: 'React.js', icon: reactjs, category: 'Frontend' },
     { name: 'Node.js', icon: nodejs, category: 'Backend' },
     { name: 'JavaScript', icon: Code2, category: 'Programming' },
@@ -37,7 +42,7 @@ const SkillSet = () => {
     { name: 'AWS', icon: Cloud, category: 'Cloud' },
     { name: 'Nginx', icon: Server, category: 'Web Server' },
     { name: 'Grafana', icon: Monitor, category: 'Monitoring' },
-    { name: 'Prometheus', icon: Database, category: 'Monitoring' },
+    { name: 'Prometheus', icon: Prometheus, category: 'Monitoring' },
     { name: 'Figma', icon: FigmaIcon, category: 'Design' },
     { name: 'Draw IO', icon: drawio, category: 'Design' },
     { name: 'MS Office', icon: document, category:'Documentation'},

@@ -92,7 +92,7 @@ const ProjectCard = ({ project, isEven }) => {
     >
       {/* Image Section */}
       <div
-        className="relative md:w-5/12 h-64 md:h-auto overflow-hidden cursor-pointer"
+        className="relative md:w-5/12 aspect-[16/9] overflow-hidden cursor-pointer"
         onMouseEnter={() => setImageHovered(true)}
         onMouseLeave={() => setImageHovered(false)}
       >
@@ -100,12 +100,12 @@ const ProjectCard = ({ project, isEven }) => {
           src={project.image}
           alt={project.title}
           className={`w-full h-full object-cover transition-transform duration-500 ${
-            imageHovered ? "scale-110" : "scale-100"
+      imageHovered ? "scale-110" : "scale-100"
           }`}
         />
         <div
           className={`absolute inset-0 bg-red-600 transition-opacity duration-300 ${
-            imageHovered ? "opacity-20" : "opacity-0"
+      imageHovered ? "opacity-20" : "opacity-0"
           }`}
         />
       </div>

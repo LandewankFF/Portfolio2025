@@ -1,11 +1,5 @@
 import { useState } from "react";
-// import HeroSection from "../components/HeroSection"; // ← HAPUS atau comment
-// import Navbar from "../components/Navbar";
-// import Footer from '../components/Footer'
-
-// import awsDicoding from "../assets/Certificates/aws_dicoding.jpg";
 import certificatesAssets from "../assets/Certificates/images";
-// import bgCertificate from "../assets/Certificates/aws_dicoding.jpg";
 
 const Certificate = () => {
   const [search, setSearch] = useState("");
@@ -39,9 +33,30 @@ const Certificate = () => {
       issueDate: "2025-08-07",
       validUntil: "Lifetime",
       description:
-        "Introduction to containerization using Docker CLI and Docker Compose.",
+        "Command line operation, File operation, Text Editor, Network, Shell, Security",
       image: certificatesAssets.Linux,
     },
+    {
+      id: 4,
+      title: "Introduction to GitOps",
+      issuer: "The Linux Foundation",
+      issueDate: "2025-09-08",
+      validUntil: "Lifetime",
+      description:
+        "Command line operation, File operation, Text Editor, Network, Shell, Security",
+      image: certificatesAssets.gitops,
+    },
+    {
+      id: 5,
+      title: "Network Administrator",
+      issuer: "The Linux Foundation",
+      issueDate: "2025-08-14",
+      validUntil: "Lifetime",
+      description:
+        "Nirkabel network, Routing, Switch Configuration",
+      image: certificatesAssets.Network,
+    },
+    
   ];
 
   // urutkan terbaru
