@@ -28,7 +28,7 @@ const SkillSet = () => {
     { name: 'Jenkins', icon: Workflow, category: 'CI/CD' },
     { name: 'GitHub Actions', icon: GitBranch, category: 'CI/CD' },
     { name: 'GitLab CI', icon: GitBranch, category: 'CI/CD' },
-    { name: 'Ansible', icon: Ansible, category: 'IAC' },
+    { name: 'Ansible', icon: Ansible, category: 'Configuration Management' },
     { name: 'Trivy', icon: SearchCheck, category: 'Security'},
     { name: 'PostgreSQL', icon: Database, category: 'Database'},
     { name: 'SQL', icon: Database, category: 'Database'},

@@ -74,7 +74,6 @@ const Certificate = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
       
       {/* Header Section - Ganti HeroSection */}
       <div className="bg-white border-b border-gray-200">
