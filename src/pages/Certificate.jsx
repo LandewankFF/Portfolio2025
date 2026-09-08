@@ -1,63 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import certificatesAssets from "../assets/Certificates/images";
 
 const Certificate = () => {
   const [search, setSearch] = useState("");
   const [selectedCert, setSelectedCert] = useState(null);
 
-  const certificates = [
-    {
-      id: 1,
-      title: "Cloud Practitioner Essentials",
-      issuer: "Dicoding Indonesia",
-      issueDate: "2023-9-11",
-      validUntil: "2025-9-11",
-      description:
-        "Introduction to AWS, Cloud Computing, Global Infrastructure, Networking, Storage & Databases, Security, Monitoring & Analytics, Pricing & Support, Migration & Innovation, Cloud Journey, AWS Cloud Practitioner Basics.",
-      image: certificatesAssets.aws_dicoding,
-    },
-    {
-      id: 2,
-      title: "CI/CD Implementation",
-      issuer: "Dicoding Indonesia",
-      issueDate: "2023-10-10",
-      validUntil: "2023-10-10",
-      description:
-        "Introduction to CI/CD, Continuous Integration, Continuous Deployment, Operations & Monitoring, and DevSecOps.",
-      image: certificatesAssets.cicd,
-    },
-    {
-      id: 3,
-      title: "Introduction Linux",
-      issuer: "The Linux Foundation",
-      issueDate: "2025-08-07",
-      validUntil: "Lifetime",
-      description:
-        "Command line operation, File operation, Text Editor, Network, Shell, Security",
-      image: certificatesAssets.Linux,
-    },
-    {
-      id: 4,
-      title: "Introduction to GitOps",
-      issuer: "The Linux Foundation",
-      issueDate: "2025-09-08",
-      validUntil: "Lifetime",
-      description:
-        "Command line operation, File operation, Text Editor, Network, Shell, Security",
-      image: certificatesAssets.gitops,
-    },
-    {
-      id: 5,
-      title: "Network Administrator",
-      issuer: "The Linux Foundation",
-      issueDate: "2025-08-14",
-      validUntil: "Lifetime",
-      description:
-        "Nirkabel network, Routing, Switch Configuration",
-      image: certificatesAssets.Network,
-    },
-    
-  ];
+  const [certificates, setCertificates] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCertificates = async () => {
+      try {
+        const res = await fetch('http://localhost:5000/api/certificates');
+        const data = await res.json();
+        setCertificates(data);
+      } catch (err) {
+        console.error('Failed to fetch certificates', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCertificates();
+  }, []);
 
   // urutkan terbaru
   const sortedCertificates = [...certificates].sort(

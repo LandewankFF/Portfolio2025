@@ -1,9 +1,26 @@
-import React, { useState, useMemo } from "react";
-import allProjects from "../data/projects"; 
+import React, { useState, useEffect, useMemo } from "react";
 import { Search, Github, ExternalLink } from "lucide-react";
 
 const ProjectsPage = () => {
+  const [allProjects, setAllProjects] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch('http://localhost:5000/api/projects');
+        const data = await res.json();
+        setAllProjects(data);
+      } catch (err) {
+        console.error('Failed to fetch projects', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
+
   const filteredProjects = useMemo(() => {
     let result = allProjects;
 
@@ -18,6 +35,10 @@ const ProjectsPage = () => {
     }
     return [...result].sort((a, b) => new Date(b.date) - new Date(a.date));
   }, [searchQuery, allProjects]);
+
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center">Loading projects...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">

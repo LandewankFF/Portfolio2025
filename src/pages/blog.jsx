@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Search, Calendar, Tag, ArrowUpDown } from 'lucide-react';
 
 const Blog = () => {
@@ -6,81 +6,23 @@ const Blog = () => {
   const [selectedTag, setSelectedTag] = useState('All');
   const [sortOrder, setSortOrder] = useState('newest'); // 'newest' or 'oldest'
 
-  // blog data
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Building CI/CD Pipeline with Jenkins and Docker",
-      description: "Learn how to automate your deployment process using Jenkins and Docker containers for efficient continuous integration.",
-      image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
-      date: "2024-10-15",
-      tags: ["Jenkins", "Docker", "CI/CD"],
-      link: "https://medium.com/@yourname/building-cicd-pipeline" // External link
-    },
-    {
-      id: 2,
-      title: "Kubernetes Deployment Best Practices",
-      description: "Essential tips and strategies for deploying applications on Kubernetes clusters in production environments.",
-      image: "https://images.unsplash.com/photo-1667372335962-5fd503a8ae5b?w=800&q=80",
-      date: "2024-10-10",
-      tags: ["Kubernetes", "DevOps", "Infrastructure"],
-      link: "https://dev.to/yourname/kubernetes-deployment"
-    },
-    {
-      id: 3,
-      title: "Monitoring Infrastructure with Grafana",
-      description: "Complete guide to setting up monitoring dashboards using Grafana and Prometheus for real-time system insights.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      date: "2024-10-05",
-      tags: ["Grafana", "Monitoring", "DevOps"],
-      link: "https://hashnode.com/@yourname/monitoring-grafana"
-    },
-    {
-      id: 4,
-      title: "Introduction to Infrastructure as Code",
-      description: "Understanding the fundamentals of IaC and how it transforms infrastructure management in modern DevOps.",
-      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80",
-      date: "2024-09-28",
-      tags: ["IaC", "DevOps", "Automation"],
-      link: "https://medium.com/@yourname/infrastructure-as-code"
-    },
-    {
-      id: 5,
-      title: "Docker Container Optimization Tips",
-      description: "Practical techniques to reduce Docker image size and improve container performance in production.",
-      image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80",
-      date: "2024-09-20",
-      tags: ["Docker", "Optimization", "Performance"],
-      link: "https://dev.to/yourname/docker-optimization"
-    },
-    {
-      id: 6,
-      title: "GitLab CI/CD Pipeline Configuration",
-      description: "Step-by-step guide to configure GitLab CI/CD pipelines for automated testing and deployment.",
-      image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&q=80",
-      date: "2024-09-15",
-      tags: ["GitLab", "CI/CD", "Pipeline"],
-      link: "https://medium.com/@yourname/gitlab-cicd"
-    },
-    {
-      id: 7,
-      title: "AWS Cloud Infrastructure Setup",
-      description: "Building scalable and secure cloud infrastructure on AWS using best practices and automation tools.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-      date: "2024-09-10",
-      tags: ["AWS", "Cloud", "Infrastructure"],
-      link: "https://hashnode.com/@yourname/aws-infrastructure"
-    },
-    {
-      id: 8,
-      title: "Linux System Administration Essentials",
-      description: "Core Linux administration skills every DevOps engineer should master for managing production servers.",
-      image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80",
-      date: "2024-09-05",
-      tags: ["Linux", "SysAdmin", "DevOps"],
-      link: "https://dev.to/yourname/linux-sysadmin"
-    }
-  ];
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch('http://localhost:5000/api/blogs');
+        const data = await res.json();
+        setBlogPosts(data);
+      } catch (err) {
+        console.error('Failed to fetch blogs', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
 
   // Get all unique tags
   const allTags = ['All', ...new Set(blogPosts.flatMap(post => post.tags))];
@@ -120,6 +62,10 @@ const Blog = () => {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
   };
+
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center">Loading articles...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -269,8 +215,9 @@ const BlogCard = ({ post, formatDate }) => {
         {/* Read More Button */}
         <button
           onClick={() => {
-            // Navigate to blog detail page
-            window.location.href = `/blog/${post.slug}`;
+            if (post.link) {
+              window.open(post.link, '_blank');
+            }
           }}
           className="w-full px-4 py-2.5 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
         >
